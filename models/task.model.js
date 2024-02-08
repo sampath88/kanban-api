@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
-const validator = require("validator");
 
 const taskSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    required: [true, "Please provide an ID"],
+  },
   title: {
     type: String,
     required: [true, "Please provide a title"],
@@ -26,9 +29,8 @@ const taskSchema = new mongoose.Schema({
   order: {
     type: Number,
   },
-  timestamp: {
-    type: Date,
-    default: Date.now,
+  date: {
+    type: String,
   },
 });
 
